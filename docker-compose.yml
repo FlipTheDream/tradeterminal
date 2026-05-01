@@ -1,0 +1,12 @@
+services:
+  bb-terminal:
+    build: .
+    ports:
+      - "5173:5173"
+    volumes:
+      #- .:/app/BB-Terminal
+      - ./openbb_platform:/root/.openbb_platform
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+
