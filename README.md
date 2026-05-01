@@ -8,6 +8,10 @@
 	A terminal-based trading workspace powered by OpenBB
 ```
 
+<p align="center">
+  <img src="screencap.png" alt="Trade Station Screenshot" width="800">
+</p>
+
 <div align="center">
 
 [![Docker Publish](https://github.com/FlipTheDream/tradeterminal/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/FlipTheDream/tradeterminal/actions/workflows/docker-publish.yml)
