@@ -46,7 +46,9 @@ RUN git clone https://github.com/vaughanf1/BB-Terminal.git
 WORKDIR /app/BB-Terminal
 
 # Make scripts executable and run setup
-RUN chmod +x setup.sh start.sh && sed -i 's|npm run dev|npm run dev -- --host 0.0.0.0|' start.sh
+ARG FQDN=localhost
+RUN chmod +x setup.sh start.sh && sed -i 's|npm run dev|npm run dev -- --host 0.0.0.0|' start.sh \
+    && sed -i "s|strictPort: false,|strictPort: false,\n    allowedHosts: ['${FQDN}', 'localhost'],|" app/vite.config.ts
 RUN ./setup.sh
 
 # Expose the port the service is running on

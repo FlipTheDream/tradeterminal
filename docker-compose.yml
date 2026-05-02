@@ -1,6 +1,9 @@
 services:
   bb-terminal:
-    build: .
+    build:
+      context: .
+      args:
+        FQDN: changeme.example.com
     ports:
       - "5173:5173"
     volumes:
